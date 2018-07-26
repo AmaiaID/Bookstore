@@ -1,0 +1,81 @@
+
+
+.body {
+	font-family: "Comic Sans MS";
+	background-color: bisque;
+}
+
+
+.card{
+	position:relative;
+	width:350px; height:500px;
+	perspective:100rem;
+}
+
+
+.front, .back{
+	position:absolute;
+	width: 300px; height:450px;
+	transition:transform 1s;
+	backface-visibility:hidden;
+	
+}
+
+.back{
+	transform:rotateY(180deg);
+}
+
+.card:hover .front{transform:rotateY(180deg);}
+.card:hover .back{transform:rotateY(360deg);}
+
+
+
+
+.button{	
+
+    background-color: darkred;
+	border-style: inset;
+	border-radius: 5px;
+	border-color: azure;
+	border-style: solid;
+	text-decoration: none;
+	font-weight:bold;
+	align-content: center;
+	position: absolute;
+	margin-top:200px;
+	margin-left:100px;
+	color:black;
+}
+
+.title{
+	text-align: center;
+	margin:auto;
+	margin-left:30px;
+	font-size:30px;
+	font-weight:bold;
+}
+.description{
+	padding:auto; 
+	margin-top: 50px;
+}
+
+.container{
+	display:block;
+	display: flex;
+	align-content:center;
+	justify-content: space-around;
+	padding-top: 20px;
+	flex-wrap: wrap;
+}
+
+.h2 { font-size:30px;
+	color: firebrick;
+	margin-bottom:20px;
+	
+}
+
+.logo{
+    width:200px;
+	height:150px;
+	margin-bottom:10px;
+}

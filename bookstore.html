@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1">
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="bookstore.css">
+	
+</head>
+
+<body class="body">
+	<div id="app" class="container">
+		<div class="row col-lg-12">
+			<div class="col-lg-6">
+				
+				<a href="#"><img src="Bookstore.jpg" alt="bookstore" class="img-responsive logo" ></a>
+	            <!-- <iframe src="https://giphy.com/embed/H6KB7Tqy3OlOM" width="400" height="200" frameBorder="0" margin-bottom="20px" class="giphy-embed" allowFullScreen></iframe>-->
+				</div>
+
+			<div class="col-lg-6">
+				<h2> Ubiqum Bookstore</h2>
+				<input class="form-control" type="text" v-model="search" placeholder="Search book"/>
+				
+			</div>
+		</div>
+		<div v-if= "filtered.length ==0 && search"> No Books Found</div>
+		<!--<div id="noBooks"> 
+		
+		</div>-->
+
+		<div class="row">
+			<!--<div class="col-lg-4 card" v-for="book in books">-->
+			<div class="col-lg-4 card" v-for="book in filtered">
+
+				<img v-bind:src="book.portada" class="front">
+				<div class="back">
+					<div class="title">{{book.titulo}}</div>
+					<div class="description">{{book.descripcion}}</div>
+					<div class="button"><a data-fancybox="gallery" v-bind:href="book.detalle">Más info</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="bookstore.js"></script>
+</body>
+
+</html>
